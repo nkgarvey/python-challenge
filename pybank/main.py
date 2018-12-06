@@ -1,52 +1,52 @@
 #import the budget csv
 import csv
-Budget_csv ="C:/Users/nkgar/OneDrive/Documents/GitHub/python-challenge/pybank/Budget_csv.csv"
+Budget_csv ="C:/GitHub/python-challenge/pybank/Budget_csv.csv"
 #create lists to store data
-TotalMonths = 0
-ProfitLoss = []
-Monthly_Change = []
-Greatest_Increase = []
-Greatest_Decrease = []
+Total_Months = 0
+Total_Profit = 0
+Monthly_Change = 0
+Greatest_Increase = 0
+Greatest_Decrease = 0
+previous_month = 0
+Average_Change = 0
+Month_Switch = []
 #read in the file
 with open(Budget_csv, newline = "", encoding = 'utf-8') as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ",")
     header = next(csvreader)
-    print(header)
-#count total month by len of Date column
-#for row in csv.reader:
-    for row in Budget_csv:
-        #TotalMonths = 0
-    #for row in rows:
-        #TotalMonths = 0
-        TotalMonths = int(TotalMonths) + int(row[1])
-        print(TotalMonths)
-        
-# total net Profit/loss sum of ProfitLoss column
-        ProfitLoss = 0
-    #for row in rows:   
-        #ProfitLoss += int(row[1])
-# Monthly_Change in profit/loss. Need to create list of values based on (row + (row + 1)), then sum (those values)/43
-        Monthly_Change = 0
-    #remove the for loops, everything needs to be in one loop
-    #for row in rows:
-        Monthly_Change = sum(row[1] + (row[1] + 1)) / 43
+    #print(header)
+#determine monthly change
+    for row in csv.reader:
+        if Total_Months == 0
+        previous_month = float(row[1])
+        else:
+            Monthly_Change.append(float(row[1]) - previous_month)
+            previous_month = float(row[1])
+            Month_Switch.append (row[0])
+    Total_Months = TotalMonths + 1
+    Total_Profit = Total_Profit + 1
+    # determine average monthly change
+    Average_Change = (Monthly_Change) / 43
+#find max and min monthly change
+    for row in rows
+     if Monthly_Change > 0
+        Greatest_Increase = Monthly_Change.max
+    else if Monthly_Change < 0
+        Greatest_Decrease = Monthly_Change.min
+  
+      
 
-# greatest increase = max value of sum(row +(row + 1)) if >0
-#print("row + 1" + max)
-# greatest decrease = min value of sum(row + (row + 1)) if <0
-#print("row + 1" + min)
+
 print("Financial Analysis")
 print("-----------------------------")
-print("Total Months:" + TotalMonths)
-print("Profit/Loss:" + ProfitLoss)
-print("Average Change:" + Monthly_Change)
+print("Total Months:" + Total_Months)
+print("Total Profit:" + Total_Profit)
+print("Average Change:" + Average_Change)
 print("Greatest Profit Increase:" + Greatest_Increase)
 print("Greatest Profit Decrease:" + Greatest_Decrease)
 
 
 output_file = "C:/Users/nkgar/OneDrive/Documents/GitHub/python-challenge/pybank/Budget.new_txt.txt"
-
-
 
 
 
